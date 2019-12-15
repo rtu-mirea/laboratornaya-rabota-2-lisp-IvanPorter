@@ -40,3 +40,9 @@
         (ranger (cdr coll) value (+ current 1))
     )
 )
+
+(insert (collection ) 5 2)
+
+(del (collection) 3)
+
+(ranger (collection) 5 0)

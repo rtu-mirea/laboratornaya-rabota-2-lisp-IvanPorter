@@ -24,8 +24,12 @@
     (map 'list #'expander_backer (cdr (reverse (reduce #'reducer (map 'list #'one lst) :initial-value (list (list 0 -9999))))))
 )
 
-(defun backer (lst)
-    (reverse(reduce #'decredf lst :initial-value (list)))
+
+(defun list-of (cnt item)
+    (if (= cnt 0)
+        `()
+        (cons item (list-of (- cnt 1) item))
+    )
 )
 
 (defun decredf (all i)
@@ -38,9 +42,9 @@
     )
 )
 
-(defun list-of (cnt item)
-    (if (= cnt 0)
-        `()
-        (cons item (list-of (- cnt 1) item))
-    )
+(defun backer (lst)
+    (reverse(reduce #'decredf lst :initial-value (list)))
 )
+
+(compressor (collection))
+(backer (compressor (collection)))

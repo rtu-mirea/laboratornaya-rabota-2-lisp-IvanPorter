@@ -14,4 +14,4 @@
 )
 
 (print-lines "error")
-(print-lines "sample.txt")
+(print-lines "task2.lsp")
